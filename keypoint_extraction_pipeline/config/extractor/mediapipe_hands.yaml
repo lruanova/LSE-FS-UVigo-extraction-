@@ -1,0 +1,7 @@
+_target_: keypoint_extraction_pipeline.keypoint_extractors.mediapipe.hands_extractor.MediapipeHandsExtractor
+
+hands_cfg:
+  model_path: ./models/hand_landmarker.task
+  num_hands: 2
+  min_hand_detection_confidence: 0.5
+  min_hand_presence_confidence: 0.5

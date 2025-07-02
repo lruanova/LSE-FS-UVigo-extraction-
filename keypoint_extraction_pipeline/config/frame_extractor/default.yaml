@@ -1,0 +1,3 @@
+_target_: keypoint_extraction_pipeline.frame_extractors.opencv_extractor.OpenCVFrameExtractor
+reader_config:
+  - placeholder: null

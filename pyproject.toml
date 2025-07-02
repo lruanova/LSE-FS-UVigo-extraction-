@@ -1,0 +1,25 @@
+[project]
+dependencies = [
+  "datasets>=3.5.1",
+  "h5py>=3.13.0",
+  "hydra-core>=1.3.2",
+  "mediapipe>=0.10.21",
+  "opencv-python>=4.11.0.86",
+  "plotly>=6.0.1",
+  "pydantic>=2.11.4",
+  "pympi-ling>=1.70.2",
+  "ray[data,default,train]>=2.45.0",
+  "streamlit>=1.45.0",
+]
+description = "Basic keypoint extraction pipeline for LSE-FS-Uvigo dataset"
+name = "keypoint_extraction_pipeline"
+readme = "README.md"
+requires-python = ">=3.12"
+version = "0.1.0"
+
+[tool.setuptools.packages.find]
+include = ["keypoint_extraction_pipeline*"]
+where = ["."]
+
+[tool.pylance]
+typeCheckingMode = "basic"

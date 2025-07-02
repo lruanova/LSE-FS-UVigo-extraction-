@@ -1,0 +1,33 @@
+# define here transformations to apply
+# put here Pipeline object in case you want to choose between different
+# pipeline workflows.
+
+# mediapipe pipeline
+
+obj:
+  _target_: keypoint_extraction_pipeline.transformations.pipeline.Pipeline
+  transformations:
+    # Compute wrist velocity
+    - _target_: keypoint_extraction_pipeline.transformations.operators.add_wrist_velocity.AddWristVelocityOperator
+
+    # Center
+    - _target_: keypoint_extraction_pipeline.transformations.operators.center_on_origin.CenterOperator
+      subsets_to_apply: ["left_hand", "right_hand"]
+
+    # Get signing hand
+    - _target_ : keypoint_extraction_pipeline.transformations.operators.get_signing_hand.GetSigningHandOperator
+      strategy: "inter_finger_movement"
+      pose_landmark_map:
+        nose: 0
+        left_wrist: 15
+        right_wrist: 16
+      hand_finger_indices: [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+
+    # Scaling
+    - _target_: keypoint_extraction_pipeline.transformations.operators.scale_using_reference.HandSizeNormalizerOperator
+      fixed_size: 0.2
+      ref_point_a_idx: 0
+      ref_point_b_idx: 9
+
+# Path to the output transformed keypoints
+transformed_kps_save_dir: transformed/

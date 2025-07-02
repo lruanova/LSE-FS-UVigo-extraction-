@@ -1,0 +1,15 @@
+
+loader_name: esaude
+
+# path to the dataset files
+dataset_path:
+
+# save path for raw keypoints
+raw_keypoints_save_dir:
+
+max_samples: null
+splits_to_process:
+  - train
+  - validation
+  - test
+

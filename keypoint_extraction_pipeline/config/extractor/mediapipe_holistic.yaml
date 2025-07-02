@@ -1,0 +1,8 @@
+_target_: keypoint_extraction_pipeline.keypoint_extractors.mediapipe.holistic_extractor.MediapipeHolisticExtractor
+mediapipe_cfg:
+  static_image_mode: true
+  model_complexity: 2
+  min_detection_confidence: 0.5
+  min_tracking_confidence: 0.5
+
+

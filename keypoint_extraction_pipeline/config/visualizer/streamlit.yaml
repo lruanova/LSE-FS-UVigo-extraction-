@@ -1,0 +1,12 @@
+layout: wide
+marker_size: 4
+colors:
+  - blue
+  - red
+  - green
+  - purple
+  - orange
+  - cyan
+  - magenta
+  - yellow
+  - black

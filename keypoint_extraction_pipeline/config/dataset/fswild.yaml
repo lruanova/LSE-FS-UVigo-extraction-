@@ -1,0 +1,16 @@
+
+loader_name: fswild
+
+# path to the dataset files
+# for fswild is required the path to the root folder containing train/validation/test sets
+dataset_path: fswild_splits/
+
+# save path for raw keypoints
+raw_keypoints_save_dir:
+
+max_samples: null
+splits_to_process:
+  - train
+  - validation
+  - test
+

@@ -1,0 +1,24 @@
+
+loader_name: urxencias
+
+# path to the dataset files
+dataset_path:
+
+# save path for raw keypoints
+raw_keypoints_save_dir:
+
+# Other options
+videos_prefix: ${dataset_path}
+process_full_video: false
+
+video_id_field : filename
+start_time_field : start_time
+end_time_field : end_time
+label_field : gloss
+
+max_samples: null
+splits_to_process:
+  - train
+  - validation
+  - test
+

@@ -1,0 +1,31 @@
+defaults:
+  - _self_
+  - dataset: combined
+  - extractor: mediapipe_holistic
+  - frame_extractor: default
+  - saver: json
+  - visualizer: streamlit
+  - pipeline: default
+
+ray:
+  num_cpus: null # available CPUs for Ray
+  num_actors: 40      # parallell workers (null to available - 1)
+  gpus_per_actor: 0.0  # GPUs per worker (0 if not GPU)
+  batch_size: 1
+
+  include_dashboard: true
+  dashboard_host: 0.0.0.0
+  dashboard_port: 8265
+
+
+mode: transform # extract | transform | all | single
+
+single_video:
+  path: null            # path to video / images
+  label: single         # optional
+  start_time_ms: null   # allow to select only a segment of the video
+  end_time_ms:   null
+
+  apply_transformations: true
+  raw_output_path:
+  transformed_output_path:
